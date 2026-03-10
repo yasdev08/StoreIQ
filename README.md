@@ -90,6 +90,10 @@ sudo apt install libwebkit2gtk-4.0-dev build-essential libssl-dev libgtk-3-dev l
 ```bash
 npm install
 ```
+In case npm install doesn't work use --force 
+```bash
+npm install
+```
 
 ### 2. Run in dev mode (hot-reload)
 ```bash
