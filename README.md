@@ -92,7 +92,7 @@ npm install
 ```
 In case npm install doesn't work use --force 
 ```bash
-npm install
+npm install --force
 ```
 
 ### 2. Run in dev mode (hot-reload)
