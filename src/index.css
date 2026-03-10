@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg:       #0C0E14;
+  --surface:  #13151E;
+  --surface2: #1A1D2A;
+  --border:   #252836;
+  --border2:  #2E3248;
+  --text:     #E8EAF0;
+  --text-mid: #8B90A8;
+  --text-dim: #4A5068;
+  --amber:    #F59E0B;
+  --green:    #10B981;
+  --red:      #EF4444;
+  --blue:     #6366F1;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 4px; }
+
+/* Prevent text selection during drag */
+[data-tauri-drag-region] { user-select: none; }
+
+@keyframes fadeIn  { from { opacity: 0 } to { opacity: 1 } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(16px) } to { opacity: 1; transform: translateY(0) } }
+
+/* ── Light theme overrides ──────────────────────────────────────────────────── */
+:root[data-theme="light"] {
+  --bg-base:    #F5F6FA;
+  --bg-card:    #FFFFFF;
+  --bg-input:   #F0F1F7;
+  --border:     #E2E4EF;
+  --border-2:   #D0D3E3;
+  --text-main:  #1A1D2A;
+  --text-muted: #6B7090;
+  --text-dim:   #9BA0BB;
+}
+
+[data-theme="light"] body,
+[data-theme="light"] #root {
+  background: var(--bg-base);
+  color: var(--text-main);
+}
+
+[data-theme="light"] .bg-\[\#0C0E14\],
+[data-theme="light"] .bg-\[\#13151E\] { background: var(--bg-card) !important; }
+
+[data-theme="light"] .bg-\[\#1A1D2A\] { background: var(--bg-input) !important; }
+
+[data-theme="light"] .border-\[\#252836\],
+[data-theme="light"] .border-\[\#2E3248\] { border-color: var(--border) !important; }
+
+[data-theme="light"] .text-\[\#E8EAF0\],
+[data-theme="light"] .text-\[\#D1D5DB\] { color: var(--text-main) !important; }
+
+[data-theme="light"] .text-\[\#8B90A8\] { color: var(--text-muted) !important; }
+
+[data-theme="light"] .text-\[\#4A5068\] { color: var(--text-dim) !important; }
+
+[data-theme="light"] input,
+[data-theme="light"] select,
+[data-theme="light"] textarea {
+  background: var(--bg-input) !important;
+  border-color: var(--border) !important;
+  color: var(--text-main) !important;
+}
